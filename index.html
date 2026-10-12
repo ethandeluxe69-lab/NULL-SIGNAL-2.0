@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#050807">
+  <meta name="description" content="A tiny interactive mystery hidden inside a fictional computer terminal. No downloads, no account, no external connection.">
+  <title>NULL SIGNAL — Archive Node 07</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="scanlines" aria-hidden="true"></div>
+  <main class="terminal">
+    <header class="topbar">
+      <a class="brand" href="./" aria-label="Null Signal home"><span class="status-dot"></span> NULL SIGNAL <span class="muted">/ ARCHIVE NODE 07</span></a>
+      <div id="clock" class="clock">LOCAL CLOCK // --:--:--</div>
+    </header>
+    <section class="hero">
+      <p class="eyebrow">RECOVERED TRANSMISSION // CLASSIFIED</p>
+      <h1>Someone left<br><span>the signal on.</span></h1>
+      <p class="intro">This terminal was found running in an empty building. Three files are listed in the archive. One of them was not here yesterday.</p>
+      <div class="system-line"><span>SYS.STATUS</span><strong id="system-status">UNSTABLE</strong><span class="separator">///</span><span>CONNECTION</span><strong>LOCAL ONLY</strong><span class="separator">///</span><span>SESSION</span><strong id="session">GUEST</strong></div>
+    </section>
+    <section class="workspace">
+      <nav class="file-list" aria-label="Archive files">
+        <p class="section-label">/ARCHIVE</p>
+        <button class="file active" data-file="readme"><span class="file-icon">▤</span><span><b>readme.txt</b><small>last edited: 03:17</small></span><span class="file-arrow">↗</span></button>
+        <button class="file" data-file="log"><span class="file-icon">▤</span><span><b>incident.log</b><small>last edited: yesterday</small></span><span class="file-arrow">↗</span></button>
+        <button class="file locked" data-file="unknown"><span class="file-icon">▧</span><span><b>???_final.dat</b><small id="locked-label">permission denied</small></span><span class="lock">⌑</span></button>
+        <div class="side-note"><span class="pulse"></span> RECEIVING UNKNOWN PACKETS</div>
+        <button id="restart" class="restart">↺ RESET SESSION</button>
+      </nav>
+      <article class="viewer">
+        <div class="viewer-head"><span id="filename">readme.txt</span><span id="file-state">TEXT DOCUMENT</span></div>
+        <div id="content" class="content" aria-live="polite"></div>
+        <div class="prompt"><label for="command">guest@null:~$</label><input id="command" autocomplete="off" spellcheck="false" placeholder="type 'help' and press enter..."><button id="send" aria-label="Run command">↵</button></div>
+      </article>
+    </section>
+    <footer><span>NULL SIGNAL // A FICTIONAL INTERACTIVE MYSTERY</span><span id="footer-right">NO EXTERNAL CONNECTIONS</span></footer>
+  </main>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
